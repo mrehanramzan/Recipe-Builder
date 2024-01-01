@@ -18,10 +18,6 @@ function Ingredients({user}) {
 
   }
 
-  const onBlur = ()=>{
-    setData(initital_data)
-  }
-
   const handleDeleteClick = async(id)=>{
       try{
         const response =  await fetch(`http://localhost:5000/recipe/${id}`, {
@@ -86,7 +82,7 @@ function Ingredients({user}) {
         <h2 className="text-blue-800 text-2xl font-bold">Ingredients</h2>    
       </div>
       <div>
-        <input type="search" value={search} onBlur={showAllData} onChange={handleSearchChange} className='border-2 border-blue-500 m-8 p-2' placeholder='Recipe...' />
+        <input type="search" value={search}  onChange={handleSearchChange} className='border-2 border-blue-500 m-8 p-2' placeholder='Recipe...' />
       </div>
       <table className='border-2 border-black w-11/12 m-auto'>
         <thead>
